@@ -21,3 +21,10 @@ code main.js
 git add .
 git commit -m "Commit message"
 git push origin main
+
+
+
+Some reference:
+https://akhshyganesh.github.io/
+https://bjornmelin.io/
+https://kavan-bhavsar.vercel.app/
