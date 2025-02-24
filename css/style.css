@@ -32,7 +32,7 @@ main{
 
 header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -127,10 +127,13 @@ h1{
     font-size: 2.5rem;
     font-family: "Nunito", serif;
     margin: 0;
+    cursor: pointer;
 }
 .me{
     text-align: center;
     font-size: 1.1rem;
+    align-items: end;
+    justify-content: baseline;
 }
 
 .social-icon {
@@ -165,4 +168,187 @@ h2{
     margin: 3rem 0rem 0rem 0rem;
     padding: 0;
 
+}
+
+.hero{
+    align-items: center;
+}
+
+/* experience section */
+.timeline{
+    padding: 2rem;
+    margin: 0;
+    position: relative;
+}
+
+.timeline::before{
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0) 1%,
+    rgba(173, 139, 121, 0.8) 20%,
+    rgba(173, 139, 121, 0.8) 70%,
+    rgba(255, 255, 254, 0) 100%
+);
+}
+.experience-item {
+    position: relative;
+    width: 100%;
+    padding: 9px;
+    margin: 12px 0px;
+    margin-left: 0px;
+    backdrop-filter: blur(50px);
+    border-radius: 8px;
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.616) 60%, rgba(255, 235, 225, 0.9) 98%);
+    border: 1px solid rgba(233, 226, 223, 0.767);
+  }
+
+  /* Circle connector */
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 24px;
+    width: 12px;
+    height: 12px;
+    background: var(--secondary);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  /* Horizontal connector line */
+  .experience-item::after {
+    content: '';
+    position: absolute;
+    left: -30px; 
+    top: 29px;
+    width: 30px;
+    height: 2px;
+    background: var(--secondary);
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .experience-date {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+
+  .experience-title {
+    color: #1f2937;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .experience-content {
+    color: #4b5563;
+    line-height: 1.5;
+  }
+
+  
+  .experience-item:hover::before {
+    background: var(--secondary);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--secondary);
+  }
+
+  @media (max-width: 640px) {
+    .timeline::before {
+      left: 31px; /* Adjusted for mobile alignment */
+    }
+
+    .experience-item {
+      margin-left: 30px;
+    }
+
+    .experience-item::before {
+      left: -24px; /* Adjusted for mobile alignment */
+    }
+
+    .experience-item::after {
+      left: -12px;
+      width: 12px;
+    }
+
+    .experience-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .experience-date {
+      margin-top: 4px;
+      font-size: 0.813rem;
+    }
+  }
+/* projects section */
+
+.project-wrapper{
+    display: flex;
+}
+.project-box{
+    width: 32%;
+    margin: 4px 4px auto;
+    padding: 0.5rem;
+    border: 1px solid rgba(233, 226, 223, 0.767);
+    border-radius: 6px;
+}
+.project-title{
+    margin: 0;
+}
+.project-skills{
+    display: flex;
+    margin-top: 6px;
+}
+.project-skills span{
+    background-color: #4e433f25 ;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+}
+.secondary-btn{
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 12px;
+    padding: 4px 9px;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: white;
+}
+.secondary-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+/* publication section */
+
+.publication-item{
+    margin-bottom: 12px;
+}
+
+.publication-header{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+}
+
+.publication-header span{
+    background-color: #4e433f25 ;
+    margin: 0.2rem;
+    padding: 0.3rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    text-align: center;
 }

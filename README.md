@@ -2,6 +2,8 @@
 
 This is my personal portfolio website built with HTML, CSS, and JavaScript, hosted on GitHub Pages.
 
+view this webpage here https://adya-prasad.github.io/portfolio/
+
 ## Setup Instructions
 
 1. Clone the repository:
