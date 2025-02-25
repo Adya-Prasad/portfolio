@@ -29,4 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     typeText();
-}); 
+});
+
+function toggleMenu() {
+    document.querySelector(".navigation").classList.toggle("active");
+}

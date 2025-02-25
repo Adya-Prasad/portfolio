@@ -1,16 +1,26 @@
+/* Reset and Base Styles */
 :root {
     --primary: #4e433f;
     --primary-dark: #382720;
     --secondary: #ad8b79;
-  }
+}
 
-body{
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     color: var(--primary);
     font-family: monospace;
     font-size: 0.9rem;
+    background-color: #f8f8f8;
+    background: url(assets/grid.png) repeat-x;
 }
 
 body::before {
@@ -24,32 +34,68 @@ body::before {
     background: url(assets/grid.png) repeat-x;
     will-change: transform;
     z-index: -1;
-  }
+}
 
-main{
+.menu-icon{
+    display: none;
+}
+
+main {
     max-width: 1200px;
     margin: 2px auto;
 }
 
-header{
+/* Typography */
+h1 {
+    font-weight: 800;
+    color: var(--primary-dark);
+    font-size: 2.5rem;
+    font-family: "Nunito", serif;
+    cursor: pointer;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    font-family: "Nunito", serif;
+    margin: 3rem 0 0 0;
+    padding: 0;
+}
+
+h3 {
+    font-family: monospace;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.me {
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+/* Layout */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo{
+.logo {
     width: 150px;
     margin: 1rem;
     cursor: pointer;
 }
 
-.navigation{
-    display:flex;
+.navigation {
+    display: flex;
     margin: 0;
     font-size: 1rem;
 }
 
-.menu-list{
+.menu-list {
     list-style: none;
     display: flex;
     gap: 2rem;
@@ -57,7 +103,14 @@ header{
     padding: 0;
 }
 
-.menu-list li a{
+.menu-list li {
+    display: inline;
+    color: var(--primary);
+    font-weight: 600;
+    font-family: "Nunito", serif;
+}
+
+.menu-list li a {
     text-decoration: none;
     color: var(--primary);
     display: flex;
@@ -68,24 +121,17 @@ header{
     transition: all 0.3s ease;
 }
 
-.menu-list li a:hover{
+.menu-list li a:hover {
     background: #f5f5f5;
     color: var(--secondary);
 }
 
-.menu-list li a svg{
+.menu-list li a svg {
     width: 20px;
     height: 20px;
 }
 
-.menu-list li{
-    display: inline;
-    color: var(--primary);
-    font-weight: 600;
-    font-family: "Nunito", serif;
-}
-
-.hor-line{
+.hor-line {
     height: 1px;
     border: none;
     background: linear-gradient(90deg, 
@@ -96,7 +142,8 @@ header{
     margin: 20px 0;
 }
 
-.love{
+/* Components */
+.love {
     font-family: monospace;
     background: #f5f5f5;
     padding: 20px;
@@ -113,7 +160,6 @@ header{
 .love span {
     border-right: 2px solid var(--primary);
     animation: cursor-blink 0.75s infinite;
-
 }
 
 @keyframes cursor-blink {
@@ -122,19 +168,22 @@ header{
     100% { border-right-color: transparent }
 }
 
-h1{
-    font-weight: 800;
-    color: var(--primary-dark);
-    font-size: 2.5rem;
-    font-family: "Nunito", serif;
-    cursor: pointer;
-    margin: 0;
-}
-.me{
-  text-align: right;
-    font-size: 1.1rem;
+.secondary-btn {
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 12px;
+    padding: 4px 9px;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: white;
 }
 
+.secondary-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Social Icons */
 .social-icon {
     display: flex;
     gap: 1.5rem;
@@ -148,43 +197,34 @@ h1{
 }
 
 .social-icon a:hover {
-    color: var(--secondary);;
+    color: var(--secondary);
 }
 
 .social-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: 1px solid var(--primary);
     border-radius: 6px;
     padding: 3px;
 }
 
-.social-icon svg:hover{
+.social-icon svg:hover {
     border: 1px solid var(--secondary);
 }
-h2{
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--primary-dark);
-    font-family: "Nunito", serif;
-    margin: 3rem 0rem 0rem 0rem;
-    padding: 0;
 
-}
-
-.hero{
+/* Sections */
+.hero {
     align-items: center;
 }
 
-/* experience section */
-.timeline{
+/* Experience Section */
+.timeline {
     padding: 2rem;
     margin: 0;
     position: relative;
 }
 
-.timeline::before{
+.timeline::before {
     content: "";
     position: absolute;
     left: 3px;
@@ -192,12 +232,13 @@ h2{
     bottom: 0;
     width: 2px;
     background: linear-gradient(180deg, 
-    rgba(255, 255, 255, 0) 1%,
-    rgba(173, 139, 121, 0.8) 20%,
-    rgba(173, 139, 121, 0.8) 70%,
-    rgba(255, 255, 254, 0) 100%
-);
+        rgba(255, 255, 255, 0) 1%,
+        rgba(173, 139, 121, 0.8) 20%,
+        rgba(173, 139, 121, 0.8) 70%,
+        rgba(255, 255, 254, 0) 100%
+    );
 }
+
 .experience-item {
     position: relative;
     width: 100%;
@@ -209,10 +250,9 @@ h2{
     border: 1px solid rgba(192, 189, 188, 0.32);
     display: block;
     box-sizing: border-box;
-  }
+}
 
-  /* Circle connector */
-  .experience-item::before {
+.experience-item::before {
     content: '';
     position: absolute;
     left: -35px;
@@ -223,10 +263,9 @@ h2{
     border-radius: 50%;
     z-index: 1;
     transition: all 0.3s ease;
-  }
+}
 
-  /* Horizontal connector line */
-  .experience-item::after {
+.experience-item::after {
     content: '';
     position: absolute;
     left: -30px; 
@@ -234,87 +273,62 @@ h2{
     width: 30px;
     height: 2px;
     background: var(--secondary);
-  }
+}
 
-  .experience-header {
+.experience-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
-  }
+}
 
-  .experience-date {
+.experience-date {
     color: #6b7280;
     font-size: 0.875rem;
-  }
+}
 
-  .experience-title {
+.experience-title {
     color: #1f2937;
     font-size: 1.125rem;
     font-weight: 600;
-  }
+}
 
-  .experience-content {
+.experience-content {
     color: #4b5563;
     line-height: 1.5;
-  }
+}
 
-  
-  .experience-item:hover::before {
+.experience-item:hover::before {
     background: var(--secondary);
     transform: scale(1.2);
     box-shadow: 0 0 10px var(--secondary);
-  }
+}
 
-  @media (max-width: 640px) {
-    .timeline::before {
-      left: 31px; /* Adjusted for mobile alignment */
-    }
 
-    .experience-item {
-      margin-left: 30px;
-    }
-
-    .experience-item::before {
-      left: -24px; /* Adjusted for mobile alignment */
-    }
-
-    .experience-item::after {
-      left: -12px;
-      width: 12px;
-    }
-
-    .experience-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .experience-date {
-      margin-top: 4px;
-      font-size: 0.813rem;
-    }
-  }
-/* projects section */
-
-.project-wrapper, .contribution-wrapper{
+/* Projects Section */
+.project-wrapper, .contribution-wrapper {
     display: flex;
 }
-.project-box, .contribution-box{
+
+.project-box, .contribution-box {
     width: 32%;
     margin: 4px 4px auto;
     padding: 0.5rem;
     border: 1px solid rgba(233, 226, 223, 0.767);
     border-radius: 6px;
 }
-.project-title{
+
+.project-title {
     margin: 0;
 }
-.project-skills{
+
+.project-skills {
     display: flex;
     margin-top: 6px;
 }
-.project-skills span{
-    background-color: #4e433f25 ;
+
+.project-skills span {
+    background-color: #4e433f25;
     margin: 0.2rem;
     padding: 0.2rem;
     border-radius: 3px;
@@ -323,36 +337,21 @@ h2{
     align-items: center;
     min-height: none;
 }
-.secondary-btn{
-    background-color: var(--secondary);
-    border: none;
-    border-radius: 12px;
-    padding: 4px 9px;
-    margin-top: 6px;
-    font-size: 0.8rem;
-    color: white;
-}
-.secondary-btn a{
-    text-decoration: none;
-    color: white;
-}
 
-/* publication section */
-
-.publication-item{
+/* Publication Section */
+.publication-item {
     margin-bottom: 12px;
 }
 
-.publication-header{
+.publication-header {
     display: flex;
     justify-content: space-between;
     text-align: center;
     align-items: center;
-
 }
 
-.publication-header span{
-    background-color: #4e433f25 ;
+.publication-header span {
+    background-color: #4e433f25;
     margin: 0.2rem;
     padding: 0.3rem;
     border-radius: 3px;
@@ -360,21 +359,13 @@ h2{
     text-align: center;
 }
 
-
-/* skill */
-
-
+/* Skill Section */
 .skill-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin: 0 auto;
     max-width: 1200px;
-}
-
-.skill-title {
-    color: var(--secondary);
-    font-size: 1rem;
 }
 
 .skill-container {
@@ -389,7 +380,8 @@ h2{
     margin: 0.5rem 0;
     font-size: 0.82rem;
 }
-.skill-desc{
+
+.skill-desc {
     margin-bottom: 1rem;
 }
 
@@ -410,32 +402,30 @@ h2{
     margin: 0.1rem;
 }
 
-.miscellnous-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.miscellnous-skills span {
-    background-color: #4e433f25;
-    padding: 0.3rem;
+.skillset {
+    background-color: var(--secondary);
+    display: block;
+    color: white;
     border-radius: 3px;
-    font-size: 0.9rem;
-    text-align: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0.1rem;
+    padding: 2px 4px;
+    margin: 4px 0px;
+    width: max-content;
 }
 
-#footer{
+.skill-icon{
+    width: 30px;
+    height: 30px;
+    color: var(--secondary);
+}
+
+#contact h3{
+    margin-top: 15px;
+    font-family: "Nunito", serif;
+}
+
+/* Footer */
+#footer {
     text-align: center;
     margin: 1rem;
     font-weight: 600;
-}
-
-.connect-h3{
-    text-align: center;
-    font-family: "Nunito", serif;
-    font-weight: 700;
 }
