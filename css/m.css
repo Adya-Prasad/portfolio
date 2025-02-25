@@ -74,6 +74,7 @@ h2{
     background: linear-gradient(150deg, rgba(0, 0, 0, 0.5) 70%, rgba(255, 208, 185, 0.61) 100%);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(192, 189, 188, 0.32);
+    z-index: 1000;
     }
 
     /* Show navigation when active */
@@ -143,8 +144,9 @@ h2{
     align-self: center;
 }
 
-.skillset{
-    width: 100%;
+
+.skillset span {
+    font-size: 0.8rem;
 }
 
 #social-icon{
