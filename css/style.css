@@ -319,9 +319,12 @@ margin-left: 15px;
     margin-bottom: 1rem;
 }
 
-.project-img{
+.project-img {
     width: 100%;
+    height: auto;
+    object-fit: cover; 
     margin-bottom: 1rem;
+    border-radius: 6px; 
 }
 
 .project-skills {
